@@ -1,7 +1,6 @@
-FROM tpires/neo4j
-
-MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+FROM neo4j:3.3.2
 
 VOLUME /var/lib/neo4j/data
+VOLUME /var/lib/neo4j/plugins
 
-EXPOSE 7474 1337
+EXPOSE 7474 1337 7687
