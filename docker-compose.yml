@@ -173,6 +173,7 @@ services:
           - PHP_UPSTREAM_CONTAINER=${APACHE_PHP_UPSTREAM_CONTAINER}
           - PHP_UPSTREAM_PORT=${APACHE_PHP_UPSTREAM_PORT}
           - PHP_UPSTREAM_TIMEOUT=${APACHE_PHP_UPSTREAM_TIMEOUT}
+          - DOCUMENT_ROOT=${APACHE_DOCUMENT_ROOT}
       volumes_from:
         - applications
       volumes:
@@ -294,7 +295,7 @@ services:
     postgres:
       build: ./postgres
       volumes:
-        - ${DATA_SAVE_PATH}/postgres:/var/lib/postgresql
+        - ${DATA_SAVE_PATH}/postgres:/var/lib/postgresql/data
       ports:
         - "${POSTGRES_PORT}:5432"
       environment:
@@ -514,7 +515,6 @@ services:
       build: ./elasticsearch
       volumes:
         - elasticsearch-data:/usr/share/elasticsearch/data
-        - elasticsearch-plugins:/usr/share/elasticsearch/plugins
       environment:
         - cluster.name=laradock-cluster
         - bootstrap.memory_lock=true
@@ -753,6 +753,4 @@ volumes:
   caddy:
     driver: "local"
   elasticsearch-data:
-    driver: "local"
-  elasticsearch-plugins:
     driver: "local"
