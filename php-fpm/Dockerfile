@@ -393,6 +393,8 @@ RUN if [ ${INSTALL_IMAP} = true ]; then \
 # wkhtmltopdf:
 #####################################
 
+USER root
+
 ARG PHP_FPM_INSTALL_WKHTMLTOPDF=false
 
 RUN if [ ${PHP_FPM_INSTALL_WKHTMLTOPDF} = true ]; then \
