@@ -446,9 +446,9 @@ RUN if [ ${PHP_FPM_INSTALL_WKHTMLTOPDF} = true ]; then \
     apt-get install -y \
     libxrender1 \
     libfontconfig1 \
-    libx11-dev \
     libjpeg62 \
     libxtst6 \
+    libssl1.0-dev \
     wget \
     && wget https://github.com/h4cc/wkhtmltopdf-amd64/blob/master/bin/wkhtmltopdf-amd64?raw=true -O /usr/local/bin/wkhtmltopdf \
     && chmod +x /usr/local/bin/wkhtmltopdf \
