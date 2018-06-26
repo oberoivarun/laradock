@@ -1,4 +1,4 @@
-FROM neo4j:3.3.2
+FROM neo4j:3.4.1
 
 VOLUME /var/lib/neo4j/data
 VOLUME /var/lib/neo4j/plugins
